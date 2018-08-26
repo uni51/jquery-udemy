@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- jQuery 2.2.1 -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script>
+		console.log("-- 2.2.1 を読み込み --");
+		console.log("$      ->", $.fn.jquery);
+		console.log("jQuery ->", jQuery.fn.jquery);
+    </script>
+    <!-- jQuery 1.12.1 -->
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script>
+		console.log("-- 1.12.1 を読み込み --");
+		console.log("$      ->", $.fn.jquery);
+		console.log("jQuery ->", jQuery.fn.jquery);
+
+		console.log("-- $を解放 --");
+		var myJq = jQuery.noConflict();
+		// jQuery読み込み前に$だったオブジェクト（ここでは
+		// 別バージョンのjQuery）が有効になる。
+		console.log("$      ->", $.fn.jquery);
+		console.log("jQuery ->", jQuery.fn.jquery);
+		console.log("myJq   ->", myJq.fn.jquery);
+
+		console.log("-- $とjQueryを解放 --");
+		var myJq2 = jQuery.noConflict(true);
+		console.log("$      ->", $.fn.jquery);
+		console.log("jQuery ->", jQuery.fn.jquery);
+		console.log("myJq2  ->", myJq2.fn.jquery);
+    </script>
+  </head>
+  <body></body>
+</html>

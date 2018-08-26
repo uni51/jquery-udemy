@@ -1,0 +1,8 @@
+try {
+	$ = $ || jQuery; $().length;
+} catch(e) {
+	var d = document, o = d.createElement("script");
+	o.type = "text/javascript";
+	o.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js";
+	d.body.appendChild(o);
+}
